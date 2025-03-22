@@ -11,7 +11,7 @@ const Banner = () => {
                 <img
                     src={img1}
                     className="w-full rounded-xl" />
-                <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r rounded-xl from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white text-center sm:text-start space-y-2 sm:space-y-7 lg:pl-12 lg:w-1/3'>
                         <p className='text-2xl sm:text-6xl font-bold'>Affordable Price For Car Servicing</p>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
@@ -31,7 +31,7 @@ const Banner = () => {
                 <img
                     src={img2}
                     className="w-full rounded-xl" />
-                <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r rounded-xl from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white text-center sm:text-start space-y-2 sm:space-y-7 lg:pl-12 lg:w-1/3'>
                         <p className='text-2xl sm:text-6xl font-bold'>Affordable Price For Car Servicing</p>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
@@ -50,7 +50,7 @@ const Banner = () => {
                 <img
                     src={img3}
                     className="w-full rounded-xl" />
-                <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r rounded-xl from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white text-center sm:text-start space-y-2 sm:space-y-7 lg:pl-12 lg:w-1/3'>
                         <p className='text-2xl sm:text-6xl font-bold'>Affordable Price For Car Servicing</p>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
@@ -69,7 +69,7 @@ const Banner = () => {
                 <img
                     src={img4}
                     className="w-full rounded-xl" />
-                <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r rounded-xl from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white text-center sm:text-start space-y-2 sm:space-y-7 lg:pl-12 lg:w-1/3'>
                         <p className='text-2xl sm:text-6xl font-bold'>Affordable Price For Car Servicing</p>
                         <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
