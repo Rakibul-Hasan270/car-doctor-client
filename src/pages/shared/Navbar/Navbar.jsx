@@ -1,8 +1,15 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router';
+import React, { useContext } from 'react';
+import { Link, Links, NavLink } from 'react-router';
 import logo from '../../../assets/logo.svg'
+import { AuthContext } from '../../../provider/AuthProvider';
 
 const Navbar = () => {
+    const { users, logOut } = useContext(AuthContext);
+
+    const handelLogOut = () => {
+        logOut();
+    }
+
     const links = <div className='lg:flex gap-4'>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/about'>About</NavLink></li>
@@ -33,7 +40,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                {
+                    users ? <div>
+                        <button onClick={handelLogOut} className='btn'>Sign Out</button>
+                    </div> : <div>
+                        <Link to='/login'><button className='btn'>Login</button></Link>
+                    </div>
+                }
             </div>
         </div>
     );
