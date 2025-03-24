@@ -13,9 +13,9 @@ const Navbar = () => {
     const links = <div className='lg:flex gap-4'>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/about'>About</NavLink></li>
-        <li><NavLink to='/services'>Services</NavLink></li>
-        <li><NavLink to='/blog'>Blog</NavLink></li>
-        <li><NavLink to='/contact'>Contact</NavLink></li>
+        <li><NavLink to='/booking'>My Booking</NavLink></li>
+        {/* <li><NavLink to='/blog'>Blog</NavLink></li>
+        <li><NavLink to='/contact'>Contact</NavLink></li> */}
     </div>
     return (
         <div className="navbar bg-base-100 shadow-sm">
