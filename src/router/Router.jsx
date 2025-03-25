@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element: <Cheeckout></Cheeckout>,
+                element: <PrivateRoute><Cheeckout></Cheeckout></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:4000/services/${params.id}`)
             },
             {

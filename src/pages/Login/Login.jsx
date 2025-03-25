@@ -3,24 +3,35 @@ import img from '../../assets/images/login/login.svg'
 import { FaGoogle } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
+import axios from 'axios';
 
 
 const Login = () => {
 
     const { signInUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handelLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         signInUser(email, password)
             .then(res => {
                 console.log(res.user)
+                navigate(location?.state ? location.state : '/');
+                const user = { email }
+
+                axios.post('http://localhost:4000/jwt', user)
+                    .then(res => {
+                        console.log(res.data)
+                    })
+
             })
             .catch(error => {
                 console.log(error)

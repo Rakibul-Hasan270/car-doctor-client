@@ -62,6 +62,26 @@ const Booking = () => {
         });
     };
 
+    const handelConfirm = id => {
+        fetch(`http://localhost:4000/booking/${id}`, {  
+            method: 'PATCH',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ status: 'confirm' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    const remaining = book.filter(book => book._id !== id);
+                    const update = book.find(book => book._id === id);
+                    update.status = 'confirm';
+                    const newBooking = [update, ...remaining];
+                    setBook(newBooking);
+                }
+            })
+    }
+
+
     return (
         <div>
             <h3 className="text-center text-5xl mb-14">
@@ -106,6 +126,7 @@ const Booking = () => {
                                     >
                                         Delete
                                     </button>
+                                    {book.status === 'confirm' ? <button className="btn text-primary font-bold">Confirm</button> : <button onClick={() => handelConfirm(book._id)} className="btn btn-ghost btn-xs">please Confirm </button>}
                                 </th>
                             </tr>
                         ))}
