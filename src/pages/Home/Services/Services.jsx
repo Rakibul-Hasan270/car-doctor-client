@@ -1,16 +1,25 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
+import useServices from '../../../hooks/useServices';
 import ServiceCard from './ServiceCard';
+// import axios from 'axios';
 
 const Services = () => {
-    const [services, setServices] = useState([]);
+    const services = useServices();
+    // const [services, setServices] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:4000/services')
-            .then(res => res.json())
-            .then(data => {
-                setServices(data);
-            })
-    }, [])
+    // useEffect(() => {
+
+    //     axios.get('http://localhost:4000/services')
+    //         .then(res => {
+    //             setServices(res.data);
+    //         })
+
+    //     // fetch('http://localhost:4000/services')
+    //     //     .then(res => res.json())
+    //     //     .then(data => {
+    //     //         setServices(data);
+    //     //     })
+    // }, [])
 
     return (
         <div className='mb-20'>

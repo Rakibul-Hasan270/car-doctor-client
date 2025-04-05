@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from 'sweetalert2'
+import axios from "axios";
 
 const Booking = () => {
     const { users } = useContext(AuthContext);
@@ -8,9 +9,14 @@ const Booking = () => {
     const [book, setBook] = useState([]);
 
     useEffect(() => {
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => setBook(data));
+        axios.get(url, { withCredentials: true })
+            .then(res => {
+                setBook(res.data)
+            })
+
+        // fetch(url)
+        //     .then((res) => res.json())   
+        //     .then((data) => setBook(data));
     }, [url]);
 
     const handelDelete = (id) => {
@@ -63,7 +69,7 @@ const Booking = () => {
     };
 
     const handelConfirm = id => {
-        fetch(`http://localhost:4000/booking/${id}`, {  
+        fetch(`http://localhost:4000/booking/${id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ status: 'confirm' })
